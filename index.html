@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slo-Go Coffee Co | Embrace the Unhurried Life</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo img {
+            height: 150px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            font-weight: 400;
+        }
+
+        .nav-links a:hover {
+            color: #8b6f47;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background-color: #333;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            min-height: 4.5rem;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            font-weight: normal;
+            font-style: italic;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            min-height: 2rem;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        /* About Section */
+        .about-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Image Grid Section */
+        .philosophy-section {
+            padding: 5rem 2rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .philosophy-section h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin: 0;
+        }
+
+        .image-grid-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .image-grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-grid-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-grid-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
+            padding: 2rem 1.5rem;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-grid-item:hover .image-grid-overlay {
+            opacity: 1;
+        }
+
+        .image-grid-overlay p {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Location Section */
+        .location-section {
+            background-color: #f9f9f9;
+            padding: 5rem 2rem;
+        }
+
+        .location-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .location-info h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .location-info h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .location-info p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .hours-table {
+            width: 100%;
+            margin-top: 1rem;
+            border-collapse: collapse;
+        }
+
+        .hours-table tr {
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .hours-table td {
+            padding: 0.8rem 0;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .hours-table td:last-child {
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .location-note {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #fff;
+            border-left: 3px solid #8b6f47;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .map-container {
+            border-radius: 0;
+            height: 500px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Feature Section */
+        .feature-section {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .feature-section h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 2rem;
+            transition: color 0.3s, transform 0.3s; /* Added transform transition */
+            font-weight: 400;
+            display: inline-block; /* Better for spacing and transforms */
+            margin: 0 10px; /* Space between icons */
+        }
+
+        .social-links a:hover {
+            color: #1da1f2;
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                display: none;
+                border-bottom: 1px solid #e5e5e5;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .location-container {
+                grid-template-columns: 1fr;
+            }
+
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Slo-Go Coffee Co Logo">
+                <span class="logo-text">Slo-Go Coffee Co</span>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#location">Visit Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <video class="hero-video" autoplay muted playsinline>
+            <source src="https://cdn.pixabay.com/video/2025/10/24/311682_large.mp4?s=mp4-640x640-is&k=20&c=76wl-BpzaYvVf083yAbETV0kDIxGBDK9PHqdW8yWtp8=" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 id="typing-title"></h1>
+            <p id="typing-subtitle"></p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <h2>Our Happy Place</h2>
+        <p>Slo-Go Coffee Co is your neighbourhood coffee shop in Brackenfell. We celebrate all the simple, yet best things in life - made by hand from scratch everyday.</p>
+        <p>We serve artisan coffee and freshly baked goods. Our biggest joy is to bring friends, family and the whole community together with ❤️ in the Cape.</p>
+        <p>In a world that constantly rushes forward, we invite you to take a step back, to breathe, to savour, and to embrace the unhurried life.</p>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section" id="philosophy">
+        <h2>The Slo-Go Way</h2>
+    </section>
+
+    <!-- Image Grid -->
+    <div class="image-grid">
+        <div class="image-grid-item">
+            <img src="https://images.unsplash.com/photo-1534422646206-3cf5a7d4a1b1?w=800&h=600&fit=scale-down" alt="Coffee">
+            <div class="image-grid-overlay">
+                <p>"The difference between ordinary and extraordinary is that little extra. And that's what coffee gives you."</p>
+            </div>
+        </div>
+        <div class="image-grid-item">
+            <img src="https://images.unsplash.com/photo-1516646227334-6102731f3c25?w=800&h=800&fit=scale-down" alt="Coffee beans">
+            <div class="image-grid-overlay">
+                <p>"Life is like a cup of coffee. It's not enough just to be hot, there has to be some kick to it."</p>
+            </div>
+        </div>
+        <div class="image-grid-item">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&h=800&fit=crop" alt="Pastries">
+            <div class="image-grid-overlay">
+                <p>"You can't buy happiness, but you can buy coffee... and that's pretty close."</p>
+            </div>
+        </div>
+        <div class="image-grid-item">
+            <img src="https://images.pexels.com/photos/2228827/pexels-photo-2228827.jpeg?w=800&h=800&fit=scale-down" alt="Coffee preparation">
+            <div class="image-grid-overlay">
+                <p>"Coffee is a hug in a mug, and at Slo-Go, every hug is crafted with care."</p>
+            </div>
+        </div>
+        <div class="image-grid-item">
+            <img src="https://images.unsplash.com/photo-1544641874-d1193df16adf?w=800&h=800&fit=scale-down" alt="Latte art">
+            <div class="image-grid-overlay">
+                <p>"Take time to smell the coffee. Better yet, take time to drink it slowly."</p>
+            </div>
+        </div>
+        <div class="image-grid-item">
+            <img src="https://images.unsplash.com/photo-1579450996247-9fe9ba5dae52?w=800&h=800&fit=scale-down" alt="Coffee and pastry">
+            <div class="image-grid-overlay">
+                <p>"In a rush? That's okay. We'll still serve you slowly, with love."</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="feature-section">
+        <h2>What We Love</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=600&fit=scale-down" alt="Community">
+                <h3>Community Gathering</h3>
+                <p>We're more than just a café - we're a place where neighbors become friends and strangers become regulars. Come join our community.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?w=800&h=600&fit=crop" alt="Fresh ingredients">
+                <h3>Made From Scratch</h3>
+                <p>Everything we serve is made fresh daily with love and care. From our signature coffee blends to our homemade pastries, quality is our promise.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://images.pexels.com/photos/241558/pexels-photo-241558.jpeg?w=800&h=600&fit=crop" alt="Cozy atmosphere">
+                <h3>The Unhurried Life</h3>
+                <p>Take your time. Relax. Breathe. We've created a space where you can slow down and savor the moment, one cup at a time.</p>
+            </div>
+            <div class="feature-card">
+                <img src="https://images.pexels.com/photos/92380/pexels-photo-92380.jpeg?w=800&h=600&fit=scale-down" alt="Pets welcome">
+                <h3>Pets Are Welcome</h3>
+                <p>We love your furry friends! Bring your pets along and enjoy our outdoor seating area together.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section" id="location">
+        <div class="location-container">
+            <div class="location-info">
+                <h2>Come Visit</h2>
+                <h3>Find Us</h3>
+                <p>51 Bottelary Road</p>
+                <p>Brackenfell South</p>
+                <p>Stellenbosch Farms, 7560</p>
+                
+                <h3>Opening Hours</h3>
+                <table class="hours-table">
+                    <tr>
+                        <td>Monday - Friday</td>
+                        <td>6:30am - 3:30pm</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>6:30am - 3:30pm</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>6:30am - 2:30pm</td>
+                    </tr>
+                </table>
+
+                <div class="location-note">
+                    We don't take bookings but work on a help yourself basis. Come on in, make yourself at home, and order at the counter when you're ready.
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.6445842563647!2d18.6754!3d-33.8896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5b7e6e7e6e6f%3A0x1e1e1e1e1e1e1e1e!2s51%20Bottelary%20Rd%2C%20Brackenfell%20South%2C%20Cape%20Town%2C%207560!5e0!3m2!1sen!2sza!4v1234567890123!5m2!1sen!2sza" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Slo-Go Coffee Co. All rights reserved.</p>
+        <p>Embrace the unhurried life.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/slogocoffee/" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/slo_gocoffee_co/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Typing animation
+        function typeText(element, text, speed, callback) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    if (callback) callback();
+                }
+            }
+            type();
+        }
+
+        // Start typing animations on page load
+        window.addEventListener('load', function() {
+            const title = document.getElementById('typing-title');
+            const subtitle = document.getElementById('typing-subtitle');
+            
+            // Type title first, then subtitle
+            typeText(title, 'THE UNHURRIED LIFE', 100, function() {
+                setTimeout(function() {
+                    typeText(subtitle, '"Slow down the pace of life, one cup of coffee at a time"', 50);
+                }, 500);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
