@@ -3,7 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slo-Go Coffee Co | Embrace the Unhurried Life</title>
+
+    <!-- Primary SEO -->
+    <title>Slo-Go Coffee Co | Coffee Shop in Brackenfell, Cape Town</title>
+    <meta name="description" content="Slo-Go Coffee Co is a neighbourhood coffee shop in Brackenfell, Cape Town serving artisan coffee and freshly baked goods made from scratch daily. Embrace the unhurried life.">
+    <meta name="keywords" content="coffee shop Brackenfell, cafe Cape Town, artisan coffee, Slo-Go Coffee, fresh pastries, Bottelary Road">
+    <meta name="author" content="Slo-Go Coffee Co">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#8b6f47">
+    <link rel="canonical" href="https://www.slogocoffee.co.za/">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Slo-Go Coffee Co">
+    <meta property="og:title" content="Slo-Go Coffee Co | Coffee Shop in Brackenfell, Cape Town">
+    <meta property="og:description" content="A neighbourhood coffee shop in Brackenfell serving artisan coffee and freshly baked goods made from scratch daily. Embrace the unhurried life.">
+    <meta property="og:url" content="https://www.slogocoffee.co.za/">
+    <meta property="og:image" content="https://www.slogocoffee.co.za/images/image-grid1.jpg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="Freshly made artisan coffee at Slo-Go Coffee Co">
+    <meta property="og:locale" content="en_ZA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Slo-Go Coffee Co | Coffee Shop in Brackenfell, Cape Town">
+    <meta name="twitter:description" content="A neighbourhood coffee shop in Brackenfell serving artisan coffee and freshly baked goods made from scratch daily.">
+    <meta name="twitter:image" content="https://www.slogocoffee.co.za/images/image-grid1.jpg">
+
+    <!-- Structured data: local business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Slo-Go Coffee Co",
+      "description": "Neighbourhood coffee shop in Brackenfell, Cape Town serving artisan coffee and freshly baked goods made from scratch daily.",
+      "url": "https://www.slogocoffee.co.za/",
+      "image": "https://www.slogocoffee.co.za/images/image-grid1.jpg",
+      "logo": "https://www.slogocoffee.co.za/images/logo.png",
+      "servesCuisine": ["Coffee", "Bakery"],
+      "priceRange": "$$",
+      "telephone": "+27 76 337 5889",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "51 Bottelary Road, Brackenfell South, Stellenbosch Farms",
+        "addressLocality": "Cape Town",
+        "addressRegion": "Western Cape",
+        "postalCode": "7560",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.8896,
+        "longitude": 18.6754
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "06:30",
+          "closes": "15:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "06:30",
+          "closes": "14:30"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/slogocoffee/",
+        "https://www.instagram.com/slo_gocoffee_co/"
+      ]
+    }
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -153,9 +229,9 @@
 
         /* About Section */
         .about-section {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 3.5rem 2rem;
             text-align: center;
         }
 
@@ -173,6 +249,68 @@
             line-height: 1.8;
             color: #555;
             margin-bottom: 1.5rem;
+        }
+
+        /* Our Story Section */
+        .story-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem 4rem;
+            text-align: center;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .story-section h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .story-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.3rem;
+            text-align: left;
+        }
+
+        .story-quote {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            line-height: 1.6;
+            color: #8b6f47;
+            max-width: 600px;
+            margin: 2.5rem auto;
+            text-align: center;
+        }
+
+        .story-attribution {
+            margin-top: 2.5rem;
+            font-style: italic;
+            color: #888;
+            text-align: center;
+        }
+
+        .story-cta {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.9rem 2.5rem;
+            background-color: #8b6f47;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .story-cta:hover {
+            background-color: #6f5837;
+            transform: translateY(-2px);
         }
 
         /* Image Grid Section */
@@ -371,6 +509,47 @@
             line-height: 1.6;
         }
 
+        /* Let's Connect (in Visit section) */
+        .connect-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .connect-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            background-color: #fff;
+            color: #8b6f47;
+            transition: color 0.3s, background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .connect-links a:hover {
+            color: #fff;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+        }
+
+        .connect-links svg {
+            height: 24px;
+            width: auto;
+            fill: currentColor;
+        }
+
+        .connect-links .facebook:hover {
+            background-color: #1877f2;
+        }
+
+        .connect-links .instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+        }
+
         /* Footer */
         footer {
             background-color: #333;
@@ -379,32 +558,38 @@
             padding: 3rem 2rem;
         }
 
-        footer p {
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-            color: #ccc;
+        .footer-brand {
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
         }
 
-        .social-links {
+        .footer-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            list-style: none;
+            margin-bottom: 1.5rem;
         }
 
-        .social-links a {
-            color: #fff;
+        .footer-links a {
+            color: #ccc;
             text-decoration: none;
-            font-size: 2rem;
-            transition: color 0.3s, transform 0.3s; /* Added transform transition */
-            font-weight: 400;
-            display: inline-block; /* Better for spacing and transforms */
-            margin: 0 10px; /* Space between icons */
+            font-size: 0.95rem;
+            transition: color 0.3s;
         }
 
-        .social-links a:hover {
-            color: #1da1f2;
-            transform: translateY(-2px); /* Lift effect on hover */
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #aaa;
         }
 
         /* Responsive Design */
@@ -463,10 +648,10 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="images/logo.png" alt="Slo-Go Coffee Co Logo">
+                <img src="images/logo.png" alt="Slo-Go Coffee Co logo" width="150" height="150">
                 <span class="logo-text">Slo-Go Coffee Co</span>
             </div>
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="menu-toggle" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -474,6 +659,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#story">Our Story</a></li>
                 <li><a href="#philosophy">Philosophy</a></li>
                 <li><a href="#location">Visit Us</a></li>
             </ul>
@@ -482,13 +668,13 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <video class="hero-video" autoplay muted playsinline>
+        <video class="hero-video" autoplay muted loop playsinline poster="images/image-grid1.jpg">
             <source src="images/hero.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 id="typing-title"></h1>
-            <p id="typing-subtitle"></p>
+            <h1 id="typing-title">The Unhurried Life</h1>
+            <p id="typing-subtitle">"Slow down the pace of life, one cup of coffee at a time"</p>
         </div>
     </section>
 
@@ -500,6 +686,20 @@
         <p>In a world that constantly rushes forward, we invite you to take a step back, to breathe, to savour, and to embrace the unhurried life.</p>
     </section>
 
+    <!-- Our Story Section -->
+    <section class="story-section" id="story">
+        <h2>Our Story</h2>
+        <p>You wake each morning feeling the weight of an endless to-do list — work pressure, family demands, a restless mind that never stops scrolling. You're aimlessly drifting, wondering if there's any room left for peace, purpose, or even a simple moment of joy.</p>
+        <p>Then you arrive at Slo-Go Coffee — a farm-style shop that invites you to join the unhurried life. The aroma of freshly brewed coffee and soft amber lighting greet you. On every coffee pouch you'll read: "A coffee that connects — this isn't just coffee, it's a movement." One sip slows the rush, grounds you, and opens a space where you can breathe.</p>
+        <blockquote class="story-quote">"You never know how you can change someone's life."</blockquote>
+        <p>I know that feeling, because I lived it. Years of overtime, anxiety, and a deep-down sense of hopelessness landed me in a dark hole — sleepless nights, a heavy heart, and a marriage that felt broken.</p>
+        <p>A barista once handed me a cup and said those words. His simple kindness, the support of my church, and the truth of Matthew 11:28–30 — "Come to me, all who are weary…" — showed me that surrendering control and trusting God could pull me out. That rescue became my mission: to create a place where anyone can find that same lifeline.</p>
+        <p>Now, when you come to Slo-Go Coffee, you're not just buying coffee — you're stepping into a community that uplifts, motivates, and reminds you that God is in control. You leave feeling lighter, more purposeful, and ready to face the day with a renewed sense of freedom. You become the hero of your own story, armed with a cup of intention and a network of people who cheer you on.</p>
+        <p>If the hurry of life is stealing your joy, come to Slo-Go Coffee. Grab a cup, join a conversation circle, and remember — we weren't meant to do life alone. Community needs us, and we need community.</p>
+        <p class="story-attribution">— Chris, Slo-Go Coffee Co</p>
+        <a href="#location" class="story-cta">Visit Us</a>
+    </section>
+
     <!-- Philosophy Section -->
     <section class="philosophy-section" id="philosophy">
         <h2>The Slo-Go Way</h2>
@@ -508,37 +708,37 @@
     <!-- Image Grid -->
     <div class="image-grid">
         <div class="image-grid-item">
-            <img src="images/image-grid1.jpg?w=800&h=800&fit=scale-down" alt="Coffee" width="800" height="800" loading="lazy">
+            <img src="images/image-grid1.jpg" alt="Freshly brewed artisan coffee" width="800" height="800" loading="lazy">
             <div class="image-grid-overlay">
                 <p>"The difference between ordinary and extraordinary is that little extra. And that's what coffee gives you."</p>
             </div>
         </div>
         <div class="image-grid-item">
-            <img src="images/image-grid2.jpg?w=800&h=800&fit=scale-down" alt="Coffee beans">
+            <img src="images/image-grid2.jpg" alt="Roasted coffee beans" width="800" height="800" loading="lazy">
             <div class="image-grid-overlay">
                 <p>"Life is like a cup of coffee. It's not enough just to be hot, there has to be some kick to it."</p>
             </div>
         </div>
         <div class="image-grid-item">
-            <img src="images/image-grid3.jpg?w=800&h=800&fit=scale-down" alt="Pastries">
+            <img src="images/image-grid3.jpg" alt="Freshly baked pastries" width="800" height="800" loading="lazy">
             <div class="image-grid-overlay">
                 <p>"You can't buy happiness, but you can buy coffee... and that's pretty close."</p>
             </div>
         </div>
         <div class="image-grid-item">
-            <img src="images/image-grid4.jpg?w=800&h=800&fit=scale-down" alt="Coffee preparation">
+            <img src="images/image-grid4.jpg" alt="Barista preparing coffee" width="800" height="800" loading="lazy">
             <div class="image-grid-overlay">
                 <p>"Coffee is a hug in a mug, and at Slo-Go, every hug is crafted with care."</p>
             </div>
         </div>
         <div class="image-grid-item">
-            <img src="images/image-grid5.jpg?w=800&h=800&fit=scale-down" alt="Latte art">
+            <img src="images/image-grid5.jpg" alt="Latte art in a coffee cup" width="800" height="800" loading="lazy">
             <div class="image-grid-overlay">
                 <p>"Take time to smell the coffee. Better yet, take time to drink it slowly."</p>
             </div>
         </div>
         <div class="image-grid-item">
-            <img src="images/image-grid6.jpg?w=800&h=800&fit=scale-down" alt="Coffee and pastry">
+            <img src="images/image-grid6.jpg" alt="Coffee served with a pastry" width="800" height="800" loading="lazy">
             <div class="image-grid-overlay">
                 <p>"In a rush? That's okay. We'll still serve you slowly, with love."</p>
             </div>
@@ -550,22 +750,22 @@
         <h2>What We Love</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <img src="images/features-grid1.jpg?w=800&h=800&fit=scale-down" alt="Community">
+                <img src="images/features-grid1.jpg" alt="Friends gathering at the coffee shop" width="800" height="800" loading="lazy">
                 <h3>Community Gathering</h3>
                 <p>We're more than just a café - we're a place where neighbors become friends and strangers become regulars. Come join our community.</p>
             </div>
             <div class="feature-card">
-                <img src="images/features-grid2.jpg?w=800&h=800&fit=scale-down" alt="Fresh ingredients">
+                <img src="images/features-grid2.jpg" alt="Fresh ingredients prepared from scratch" width="800" height="800" loading="lazy">
                 <h3>Made From Scratch</h3>
                 <p>Everything we serve is made fresh daily with love and care. From our signature coffee blends to our homemade pastries, quality is our promise.</p>
             </div>
             <div class="feature-card">
-                <img src="images/features-grid3.jpg?w=800&h=800&fit=scale-down" alt="Cozy atmosphere">
+                <img src="images/features-grid3.jpg" alt="Cozy, relaxed café atmosphere" width="800" height="800" loading="lazy">
                 <h3>The Unhurried Life</h3>
                 <p>Take your time. Relax. Breathe. We've created a space where you can slow down and savor the moment, one cup at a time.</p>
             </div>
             <div class="feature-card">
-                <img src="images/features-grid4.jpg?w=800&h=800&fit=scale-down" alt="Pets welcome">
+                <img src="images/features-grid4.jpg" alt="Dog relaxing in the pet-friendly seating area" width="800" height="800" loading="lazy">
                 <h3>Pets Are Welcome</h3>
                 <p>We love your furry friends! Bring your pets along and enjoy our outdoor seating area together.</p>
             </div>
@@ -578,9 +778,7 @@
             <div class="location-info">
                 <h2>Come Visit</h2>
                 <h3>Find Us</h3>
-                <p>51 Bottelary Road</p>
-                <p>Brackenfell South</p>
-                <p>Stellenbosch Farms, 7560</p>
+                <p>51 Bottelary Road, Brackenfell South, Stellenbosch Farms, 7560</p>
                 
                 <h3>Opening Hours</h3>
                 <table class="hours-table">
@@ -601,12 +799,24 @@
                 <div class="location-note">
                     We don't take bookings but work on a help yourself basis. Come on in, make yourself at home, and order at the counter when you're ready.
                 </div>
+
+                <h3>Let's Connect</h3>
+                <p>Follow along for daily specials, fresh bakes and a little everyday inspiration.</p>
+                <div class="connect-links">
+                    <a class="facebook" href="https://www.facebook.com/slogocoffee/" target="_blank" rel="noopener" aria-label="Slo-Go Coffee Co on Facebook">
+                        <svg viewBox="0 0 320 512" aria-hidden="true" focusable="false"><path d="M279.14 288l14.22-92.66h-88.91V134.7c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+                    </a>
+                    <a class="instagram" href="https://www.instagram.com/slo_gocoffee_co/" target="_blank" rel="noopener" aria-label="Slo-Go Coffee Co on Instagram">
+                        <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                    </a>
+                </div>
             </div>
 
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.6445842563647!2d18.6754!3d-33.8896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5b7e6e7e6e6f%3A0x1e1e1e1e1e1e1e1e!2s51%20Bottelary%20Rd%2C%20Brackenfell%20South%2C%20Cape%20Town%2C%207560!5e0!3m2!1sen!2sza!4v1234567890123!5m2!1sen!2sza" 
-                        allowfullscreen="" 
-                        loading="lazy" 
+                <iframe src="https://www.google.com/maps?q=51%20Bottelary%20Road%2C%20Brackenfell%20South%2C%20Cape%20Town%2C%207560&output=embed"
+                        title="Map showing Slo-Go Coffee Co at 51 Bottelary Road, Brackenfell South"
+                        allowfullscreen=""
+                        loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
@@ -615,19 +825,35 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Slo-Go Coffee Co. All rights reserved.</p>
+        <div class="footer-brand">Slo-Go Coffee Co</div>
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#location">Visit Us</a></li>
+        </ul>
         <p>Embrace the unhurried life.</p>
-        <div class="social-links">
-            <a href="https://www.facebook.com/slogocoffee/" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/slo_gocoffee_co/" target="_blank">Instagram</a>
-        </div>
+        <p>&copy; <span id="year">2025</span> Slo-Go Coffee Co. All rights reserved.</p>
     </footer>
 
     <script>
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+            const toggle = document.querySelector('.menu-toggle');
+            const isOpen = navLinks.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', isOpen);
         }
+
+        // Allow opening the menu with the keyboard (Enter / Space)
+        document.querySelector('.menu-toggle').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        // Keep the footer copyright year current
+        document.getElementById('year').textContent = new Date().getFullYear();
 
         // Typing animation
         function typeText(element, text, speed, callback) {
@@ -671,6 +897,7 @@
                     });
                     // Close mobile menu if open
                     document.getElementById('navLinks').classList.remove('active');
+                    document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
                 }
             });
         });
